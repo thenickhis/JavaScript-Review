@@ -3,7 +3,9 @@ var threeItems = [1,2,3];
 //alert the result of your function
 
   //code here
-
+var last = function(arr) {
+	return arr.length-1;
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -14,7 +16,10 @@ var threeItems = [1,2,3];
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
   //code here
-
+var evens = evenArray.filter(function (item)) {
+	if (item % 2) return false;
+	return true;
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -27,7 +32,15 @@ var getRandomArbitrary = function() {
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
   //code here
-
+var random = function(arr) {
+	var rn = getRandomArbitrary;
+	for (var i=0;i<arr.length;i++) {
+		if (arr[i]===rn)
+			alert("true");
+		else
+			alert("false");
+	}
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -38,6 +51,12 @@ var first = [1,2,3,4,5];
 var second;
 
   //code here
+var copy = function(_first,_second) {
+	for (var i=0;i<_first.length;i++) {
+		_second.push(_first[i]);
+	}
+	_second.push(6,7);
+}
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
@@ -52,7 +71,18 @@ alert(second) //[1,2,3,4,5,6,7];
 var sentence = "Dev Mountain is the best"
 
   //code here
-
+function longest(str) {
+  var words = str.split(' ');
+  var longestLength = 0;
+  var longestWord;
+  for (var i=0;i<words.length;i++) {
+    if (words[i].length > longestLength) {
+       longestLength = words[i].length;
+       longestWord = words[i];
+    }
+  }
+  return longestWord;
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -63,7 +93,9 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
   //code here
-
+var capitalize = function(str) {
+	str.split(' ').map(function(s){return s.charAt(0).toUpperCase() + s.slice(1)}).join(' ');
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -72,3 +104,8 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+var voweCounter(str) {
+  var m = str.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}
