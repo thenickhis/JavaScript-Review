@@ -1,7 +1,7 @@
 /* Declare and Define the functions here that will make the function calls below work properly */
 var first = function(arr,cb) {
   return cb(arr[0]);
-}
+};
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -16,7 +16,7 @@ first(names, function(firstName){
 
 var last = function(arr,cb) {
   return cb(arr[arr.length-1]);
-}
+};
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -36,7 +36,7 @@ var contains = function(str,arr,cb) {
     if (arr[i]===str)
       return cb(true);
   }
-}
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains('Colt', names, function(yes){
@@ -58,7 +58,7 @@ var map = function(arr,cb) {
     newArr.push(cb(arr[i]));
   }
   return newArr;
-}
+};
 
 var numbers = [1,2,3,4,5];
 //Produces a new array of values by mapping each value in list through a transformation function
@@ -75,7 +75,7 @@ map(numbers, function(num){
 var uniq = function(arr,cb) {
   newArr = arr.sort().filter(function(item,index,items){if(items[index]===items[index-1])return false; return true})
   return cb(newArr);
-}
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
@@ -88,7 +88,11 @@ uniq(names, function(uniqArr){
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
-
+var each = function(arr,cb) {
+  for (var i=0;i<arr.length;i++) {
+    cb(arr.indexOf(arr[i], arr[i]);
+  }
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -100,7 +104,12 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
+var getUserById = function(id,arr,cb) {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    if (users[i].id === id)
+      return cb(users[i]);
+  }
+}
 
 
 var users = [
@@ -132,7 +141,12 @@ getUserById('16t', users, function(user){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
+var find = function(arr,cb) {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    if cb(arr[i])
+      return arr[i];
+  }
+}
 
 
 //Looks through each value in the list, returning the first one that passes a truth test 
